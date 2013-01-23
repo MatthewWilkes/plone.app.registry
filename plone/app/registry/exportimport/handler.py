@@ -255,8 +255,9 @@ class RegistryImporter(object):
                             existing_value[key] = value
 
                         value = existing_value
-
-                existing_record.value = value
+                
+                if value is not None:
+                    existing_record.value = value
         else:
             self.context.records[name] = Record(field, value)
 
